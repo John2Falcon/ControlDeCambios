@@ -101,6 +101,12 @@ class ComparadorDeVersiones:
         print(f"\nLíneas modificadas: {len(self.lineas_modificadas)}")
         for original, nueva in self.lineas_modificadas:
             print(f" * {original}  → {nueva}  # MODIFICADA")
+            
+        # Agregar reporte de líneas sin cambios:
+        lineas_sin_cambios = set(self.lineas_v1) & set(self.lineas_v2)
+        print(f"\nLíneas sin cambios: {len(lineas_sin_cambios)}")
+            for linea in lineas_sin_cambios:
+            print(f"   {linea}")
 
 
 # Uso del comparador
